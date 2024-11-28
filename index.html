@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment-29 (Text Operation)</title>
+    <style>
+      body{
+        background-color:#9999ff;
+      }
+        .text-center{
+            text-align: center;
+        }
+        textarea{
+          display:block;
+          width: 70%;
+          padding: 10px;
+          border-radius:5px;
+          background-color:#d4c6c6;
+        }
+        .text-box{
+          margin-left: 290px;
+        }
+        .btn{
+          width:70%;
+          flex-wrap: wrap;
+          display:flex;
+          justify-content: space-between;
+          margin: 50px auto;
+        }
+        button{
+          width:150px;
+          padding: 8px;
+          font-size: 15px;
+          border-radius: 10px;
+          border:1px solid black;
+          cursor:pointer;
+          background-color:rgb(212, 212, 175);
+          margin-top: 20px;
+        }
+        button:hover{
+          transition: 0.3s;
+          background-color:orange;
+          box-shadow: 0  5px 0 0 rgb(194, 176, 153);
+        }
+  @media  screen and (max-width:1000px) {
+    .text-box{
+      margin: auto;
+    }
+    textarea{
+      margin: auto;
+    }
+    .button{
+      justify-content: center;
+    }
+    .btn{
+      margin-top: 15px;
+    }
+
+  }
+    </style>
+</head>
+<body>
+<h1 class="text-center">Text Operations</h1>
+<div class="text-box">
+ <h2>Input Text : </h2>
+  <textarea id="input" placeholder="Enter a text to perform operations"></textarea>
+ <h2>Output Text :</h2>
+   <textarea id="output" placeholder="Output will be display here"></textarea>
+</div>
+<div class="btn">
+<button onclick="handleUpperCase()">Upper Case</button>
+<button onclick="handleLowerCase()">Lower Case</button>
+<button onclick="handleWordCount()">Word Count</button>
+<button onclick="handlecharacterCount()">Character Count</button>
+</div>
+<script>
+  const input=document.getElementById("input");
+  const output=document.getElementById("output");
+  function handleUpperCase(){
+   const inputText=input.value;
+   output.value=inputText.toUpperCase();
+  }
+  function handleLowerCase(){
+    const inputText=input.value;
+   output.value=inputText.toLowerCase();
+  }
+  function handleWordCount(){
+    output.value=input.value.split(" ").length;
+  }
+  function handlecharacterCount(){
+    output.value=`Character Count :${input.value.length}`;
+  }
+</script>
+</body>
+</html>
